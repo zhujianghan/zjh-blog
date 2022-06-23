@@ -11,6 +11,7 @@
   },
   "scripts": {
     "dev": "npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/index.css --watch",
+    "build": "npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/index.css --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

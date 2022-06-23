@@ -1,0 +1,60 @@
+{{ define "main" }}
+<div class="container mx-auto mt-8 px-2 flex justify-between space-x-5">
+  <div class="md:w-3/4">
+    <ul class="space-y-10">
+      {{ $paginator := .Paginate (where (where .Site.Pages "Type" "posts") "IsPage" "==" true) 100 }}
+      {{ range $paginator.Pages }}
+      <li>
+        <h3>
+          <a href="{{ .Permalink }}" class="text-lg">
+            {{ .Title }} - {{ .Type }}
+          </a>
+        </h3>
+        <div class="text-sm flex items-center space-x-5">
+          <span class="flex items-center space-x-1">
+            {{ partial "svgs/heroicons/calendar.svg" }}
+            <time>{{ .Date.Format "2006-01-02" }}</time>
+          </span>
+
+          {{ with .Params.tags }}
+          <ul class="flex items-center space-x-2">
+            {{range .}}
+            <li class="px-1 py-0.5 rounded text-white bg-blue-500">
+              <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+            </li>
+            {{end}}
+          </ul>
+          {{ end }}
+
+        </div>
+        <div class="line-clamp-3 md:line-clamp-2 text-sm text-gray-600">
+          {{ .Summary }}
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+
+  <div class="hidden md:block md:w-1/4 bg-red-50">
+    <div>
+      <div>Recent posts</div>
+      <ul>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+      </ul>
+    </div>
+
+    <div>
+      <div>Tags</div>
+      <ul>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+      </ul>
+    </div>
+  </div>
+</div>
+{{ end }}

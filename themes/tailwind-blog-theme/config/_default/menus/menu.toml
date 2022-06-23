@@ -1,0 +1,24 @@
+[[main]]
+name = "Frontend"
+url = "posts/frontend"
+weight = -109
+
+[[main]]
+name = "Backend"
+url = "posts/backend"
+weight = -108
+
+[[main]]
+name = "Server"
+url = "posts/server"
+weight = -107
+
+[[main]]
+name = "Other"
+url = "posts/other"
+weight = -106
+
+[[link]]
+name = "github"
+weight = 1
+url = "https://github.com/#"

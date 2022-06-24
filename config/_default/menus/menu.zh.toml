@@ -1,20 +1,20 @@
 [[main]]
-name = 'Frontend'
+name = '前端'
 url = 'posts/frontend'
 weight = -109
 
 [[main]]
-name = 'Backend'
+name = '后端'
 url = 'posts/backend'
 weight = -108
 
 [[main]]
-name = 'Server'
+name = '服务器'
 url = 'posts/server'
 weight = -107
 
 [[main]]
-name = 'Other'
+name = '其它'
 url = 'posts/other'
 weight = -106
 

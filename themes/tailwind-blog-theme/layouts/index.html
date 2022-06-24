@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="container mx-auto mt-8 px-2 flex justify-between space-x-5">
+<div class="container mx-auto max-w-screen-xl mt-8 px-2 flex justify-between space-x-5">
   <div class="md:w-3/4">
     <ul class="space-y-10">
       {{ $paginator := .Paginate (where (where .Site.Pages "Type" "posts") "IsPage" "==" true) 100 }}
@@ -8,6 +8,8 @@
         {{ partial "post/list-item.html" . }}
       {{ end }}
     </ul>
+
+    {{ template "_internal/pagination.html" . }}
   </div>
 
   <div class="hidden md:block md:w-1/4 bg-red-50">

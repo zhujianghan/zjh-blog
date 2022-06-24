@@ -2,7 +2,7 @@
 <div class="container mx-auto xl:max-w-screen-xl mt-8 px-2 flex justify-between space-x-5">
   <div class="md:w-3/4">
     <div class="space-y-5">
-      <h1 class="text-2xl font-bold">{{ .Title }}</h1>
+      <h1 class="text-2xl font-bold dark:text-slate-300">{{ .Title }}</h1>
       <div class="flex text-sm space-x-5">
        <span class="flex items-center space-x-1">
             {{ partial "svgs/heroicons/calendar.svg" }}
@@ -20,8 +20,15 @@
         {{ end }}
       </div>
 
-      <div>
-        {{ .Content }}
+      <div x-data="{
+        theme: localStorage.theme === 'dark' ? 'dark' : 'light'
+      }">
+        <article
+          class="markdown-body"
+          :class="{ 'markdown-body-light': theme === 'light', 'markdown-body-dark': theme === 'dark',  }"
+        >
+          {{ .Content }}
+        </article>
       </div>
     </div>
 

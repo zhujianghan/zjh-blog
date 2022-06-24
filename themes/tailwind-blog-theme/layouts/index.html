@@ -4,7 +4,7 @@
     <ul class="space-y-10">
       {{ $paginator := .Paginate (where (where .Site.Pages "Type" "posts") "IsPage" "==" true) 100 }}
 
-      {{ range $paginator.Pages }}
+      {{ range $paginator.Pages.ByDate.Reverse }}
         {{ partial "post/list-item.html" . }}
       {{ end }}
     </ul>

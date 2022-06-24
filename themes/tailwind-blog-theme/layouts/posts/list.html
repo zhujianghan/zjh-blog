@@ -1,8 +1,10 @@
 {{ define "main" }}
 <div class="container mx-auto mt-8 px-2 flex justify-between space-x-5">
   <div class="md:w-3/4">
-    <ul class="space-y-10">
-      {{ $paginator := .Paginate (where (where .Site.Pages "Type" "posts") "IsPage" "==" true) 100 }}
+    <ul class="space-y-10 divide-y">
+      {{ $parentPage := .Page.Path }}
+      {{ $paginator := .Paginate (where (where (where .Site.Pages "Type" "posts") "Parent.Path" "==" $parentPage)
+      "IsPage" "==" true) }}
 
       {{ range $paginator.Pages }}
         {{ partial "post/list-item.html" . }}

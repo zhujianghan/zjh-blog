@@ -1,7 +1,7 @@
 +++
 title = 'apache-一个站点配置多个域名'
-date = 2022-04-16T11:29:14+08:00
-tags =  ['apache','域名']
+date = 2019-06-10T15:35:27+08:00
+tags = ['apache','域名']
 keywords = ['apache多域名']
 draft = false
 +++

@@ -1,7 +1,7 @@
 +++
-title = 'apache--Multiviews--漏洞'
-date = 2022-04-16T11:29:14+08:00
-tags =  ['apache','安全']
+title = 'apache-Multiviews-漏洞'
+date = 2019-10-11T17:08:18+08:00
+tags = ['apache','安全']
 keywords = ['multiviews']
 draft = false
 +++

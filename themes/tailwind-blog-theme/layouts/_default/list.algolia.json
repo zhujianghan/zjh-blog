@@ -1,0 +1,9 @@
+{{/* 生成Algolia搜索索引文件 */}}
+{{- $.Scratch.Add "index" slice -}}
+{{/* content/posts或content/post目录下的博文才生成索引 */}}
+{{- range where (where .Site.Pages "Type" "in" (slice "posts" "post")) "IsPage" true -}}
+{{- if and (not .Draft) (not .Params.private) -}}
+{{- $.Scratch.Add "index" (dict "objectID" .File.UniqueID "type" "content" "url" .Permalink "content" (.Summary | plainify) "hierarchy" (dict "lvl0" "posts" "lvl1" .Title "lvl2" (delimit .Params.Tags ",") "lvl3" "")) -}}
+{{- end -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}

@@ -1,4 +1,20 @@
-baseURL = 'http://example.org/'
+baseURL = 'http://localhost:1313/'
 languageCode = 'zh-cn'
 title = 'My New Hugo Site'
 theme = 'tailwind-blog-theme'
+
+[outputs]
+home = ['HTML', 'RSS', 'Algolia']
+
+[outputFormats.Algolia]
+baseName = 'algolia'
+isPlainText = true
+mediaType = 'application/json'
+notAlternative = true
+
+[params.algolia]
+vars = ['title', 'summary', 'date', 'publishdate', 'expirydate', 'permalink']
+params = ['categories', 'tags']
+appId = 'QB1NYV0GE1'
+indexName = 'hugo-tailwind-blog'
+searchOnlyKey = '87c867dd34150cbfbee6b6e819fb7c5c'

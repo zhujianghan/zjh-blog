@@ -1,3 +1,35 @@
 <div class="container mx-auto xl:max-w-screen-xl px-2 mt-10 border-t">
   🍀
 </div>
+
+{{- if .Site.Params.algolia.appId -}}
+<!--<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>-->
+<script src="/js/docsearch.js"></script>
+<script>
+  docsearch({
+    container: '#docsearch',
+
+   appId: {{ .Site.Params.algolia.appId }},
+   apiKey: {{ .Site.Params.algolia.searchOnlyKey }},
+   indexName: {{ .Site.Params.algolia.indexName }},
+   //  appId: 'R2IYF7ETH7',
+   //  apiKey: '599cec31baffa4868cae4e79f180729b',
+   //  indexName: 'docsearch',
+
+    placeholder: {{ i18n "search" }},
+    resultsFooterComponent({ state }) {
+      return {
+        type: 'span',
+        ref: undefined,
+        constructor: undefined,
+        key: state.query,
+        props: {
+          children: `${state.context.nbHits} hits found!`,
+        },
+        __v: null,
+      };
+    },
+
+  })
+</script>
+{{- end -}}

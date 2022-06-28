@@ -1,4 +1,13 @@
 <div class="p-4 border-l rounded space-y-10">
+  {{ if .Page.IsPage  }}
+  <div>
+    <div class="font-bold">TOC</div>
+    <div>
+      {{ .TableOfContents }}
+    </div>
+  </div>
+  {{ end }}
+
   <div>
     <div class="font-bold">Recent Posts</div>
     <ul class="px-2 space-y-0.5">

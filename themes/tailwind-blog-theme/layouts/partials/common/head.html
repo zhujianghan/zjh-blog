@@ -7,13 +7,13 @@
   <meta name="description" content="{{ .Description }}">
   <meta name="referrer" content="no-referrer"/>
   <title>{{ .Title }}</title>
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/css/index.css">
+  <link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}" type="image/x-icon">
+  <link rel="stylesheet" href="{{ "css/index.css" | absURL }}">
   {{- if .Site.Params.algolia.appId -}}
 <!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"/>-->
-  <link rel="stylesheet" href="/css/docsearch.css"/>
+  <link rel="stylesheet" href="{{ "css/docsearch.css" | absURL }}"/>
   <link rel="preconnect" href="https://{{- .Site.Params.algolia.appId -}}-dsn.algolia.net" crossorigin />
   {{- end -}}
-  <script src="/js/theme.js"></script>
-  <script defer src="/js/alpinejs.min.js"></script>
+  <script src="{{ "js/theme.js" | absURL }}"></script>
+  <script defer src=" {{ "js/alpinejs.min.js" | absURL }}"></script>
 </head>

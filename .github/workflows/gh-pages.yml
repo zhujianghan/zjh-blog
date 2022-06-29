@@ -15,9 +15,16 @@ jobs:
             group: ${{ github.workflow }}-${{ github.ref }}
         steps:
             - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
               with:
-                  submodules: true  # Fetch Hugo themes (true OR recursive)
-                  fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+                   node-version: '16'
+            - run: cd ./themes/tailwind-blog-theme
+            - run: npm install
+            - run: npm run build
+            - run: cd ../../
+#              with:
+#                  submodules: true  # Fetch Hugo themes (true OR recursive)
+#                  fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
             - name: Setup Hugo
               uses: peaceiris/actions-hugo@v2

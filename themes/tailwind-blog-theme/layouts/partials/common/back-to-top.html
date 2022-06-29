@@ -1,0 +1,24 @@
+<div
+  x-data="{
+    show: document.body.scrollTop > 20 || document.documentElement.scrollTop > 20,
+
+    handleScroll(){
+      this.show = document.body.scrollTop > 20 || document.documentElement.scrollTop > 20
+    },
+
+    backToTop(){
+      this.show = false
+      document.body.scrollTop = 0
+      document.documentElement.scrollTop = 0
+    },
+  }"
+  @scroll.window="handleScroll"
+  @click="backToTop"
+>
+  <button
+    class="fixed bottom-10 right-5 p-3 text-white bg-emerald-500 rounded-full shadow-md hover:bg-emerald-600 hover:shadow-lg active:bg-emerald-800 active:shadow-lg transition duration-150 ease-in-out"
+    x-show="show"
+  >
+    {{ partial "svgs/heroicons/chevron-double-up_solid.svg" }}
+  </button>
+</div>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode  }}">
 {{ partial "common/head.html" . }}
-<body>
-<div class="min-h-screen">
+<body class="h-screen relative">
+<div>
   {{ partial "common/header.html" . }}
-  <main class="h-screen">
-    <div class="container mx-auto">
+  <main>
+    <div class="container mx-auto absolute inset-0 flex items-center justify-center">
       <div class="flex items-center justify-center text-center px-4 flex-col sm:flex-row">
         <div
           class="text-2xl sm:text-3xl font-bold text-slate-900 sm:pr-6 sm:mr-6 sm:border-r sm:border-slate-900/10 sm:dark:border-slate-300/10 dark:text-slate-200">

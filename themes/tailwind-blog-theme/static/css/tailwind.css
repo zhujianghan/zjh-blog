@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* pagination */
 .pagination {
   display: inline-block;
   padding-left: 0;
@@ -112,6 +113,7 @@
   border-bottom-right-radius: 3px;
 }
 
+/* markdown */
 .markdown-body-dark {
   color-scheme: dark;
   --color-prettylights-syntax-comment: #8b949e;
@@ -1143,4 +1145,23 @@
 
 .markdown-body ::-webkit-calendar-picker-indicator {
   filter: invert(50%);
+}
+
+/* TOC */
+nav#TableOfContents ul li {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+nav#TableOfContents ul li a {
+  font-size: 0.875rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+nav#TableOfContents ul li ul li {
+  margin-left: 1rem;
 }

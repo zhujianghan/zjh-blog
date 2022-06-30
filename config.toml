@@ -1,6 +1,6 @@
 baseURL = 'https://zhujianghan.github.io/zjh-blog/'
 languageCode = 'zh-cn'
-title = 'My New Hugo Site'
+title = "Fourleaf Blog"
 theme = 'tailwind-blog-theme'
 
 [outputs]

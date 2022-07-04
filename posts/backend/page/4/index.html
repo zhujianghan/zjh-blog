@@ -5,8 +5,9 @@
     openThemesList: false,
     theme: localStorage.theme === 'dark' ? 'dark' : 'light',
     toggleTheme(t = 'light') {
-      localStorage.theme = t
-      window.location.reload()
+      window.setTheme(t)
+      this.theme = t
+      this.openThemesList = false
     },
 
     openLanguagesList: false,

@@ -18,3 +18,6 @@ params = ['categories', 'tags']
 appId = 'QB1NYV0GE1'
 indexName = 'hugo-tailwind-blog'
 searchOnlyKey = '87c867dd34150cbfbee6b6e819fb7c5c'
+
+[params]
+enableComment = true

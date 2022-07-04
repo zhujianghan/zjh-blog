@@ -1,0 +1,20 @@
+{{ if .Site.Params.enablecomment }}
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+  const gitalk = new Gitalk({
+    clientID: 'af53f77dab68cdae8778',
+    clientSecret: '469a082952a22532658000e23d2064d7a9135756',
+    repo: 'zjh-blog',
+    owner: 'zhujianghan',
+    admin: ['zhujianghan'],
+    id: {{ md5 .Permalink }},
+    distractionFreeMode: false
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+{{ end }}

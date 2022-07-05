@@ -4,10 +4,16 @@ title = "Fourleaf Blog"
 theme = 'tailwind-blog-theme'
 
 [outputs]
-home = ['HTML', 'RSS', 'Algolia']
+home = ['HTML', 'RSS', 'Algolia', 'Gitalk']
 
 [outputFormats.Algolia]
 baseName = 'algolia'
+isPlainText = true
+mediaType = 'application/json'
+notAlternative = true
+
+[outputFormats.Gitalk]
+baseName = 'gitalk'
 isPlainText = true
 mediaType = 'application/json'
 notAlternative = true

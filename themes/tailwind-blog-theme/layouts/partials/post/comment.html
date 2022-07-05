@@ -11,8 +11,8 @@
     repo: 'zjh-blog',
     owner: 'zhujianghan',
     admin: ['zhujianghan'],
-    id: {{ md5 .Permalink }},
-    distractionFreeMode: false
+    id: {{ md5 .RelPermalink }},
+    distractionFreeMode: false,
   })
 
   gitalk.render('gitalk-container')

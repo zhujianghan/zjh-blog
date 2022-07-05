@@ -1,0 +1,11 @@
+{{- $scratch := newScratch -}}
+{{ $scratch.Set "list" slice }}
+{{- range where .Site.RegularPages "Type" "posts" -}}
+{{-
+$scratch.Add "list" (dict
+"id" (md5 .RelPermalink)
+"title" .Title
+)
+-}}
+{{- end -}}
+{{- $scratch.Get "list" | jsonify (dict "indent" "  ") }}

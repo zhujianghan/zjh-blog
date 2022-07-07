@@ -11,11 +11,11 @@
 
         {{ with .Params.tags }}
         <ul class="flex items-center space-x-2">
-          {{range .}}
+          {{ range . }}
           <li class="px-1 py-0.5 rounded text-white bg-emerald-500">
-            <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+            <a href="{{ path.Join "tags" (. | urlize) | absURL }}">{{ . }}</a>
           </li>
-          {{end}}
+          {{ end }}
         </ul>
         {{ end }}
       </div>

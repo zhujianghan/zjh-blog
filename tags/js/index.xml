@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>js on Fourleaf Blog</title><link>https://zhujianghan.github.io/zjh-blog/tags/js/</link><description>Recent content in js on Fourleaf Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 14 Jul 2022 10:51:21 +0800</lastBuildDate><atom:link href="https://zhujianghan.github.io/zjh-blog/tags/js/index.xml" rel="self" type="application/rss+xml"/><item><title>Js Data Types</title><link>https://zhujianghan.github.io/zjh-blog/posts/frontend/js-data-types/</link><pubDate>Thu, 14 Jul 2022 10:51:21 +0800</pubDate><guid>https://zhujianghan.github.io/zjh-blog/posts/frontend/js-data-types/</guid><description> flowchart TD L1([JS 数据类型]) L1-->L21(基本类型 数值类型) L1-->L22(对象类型 引用类型) L21-->L301(字符串) L21-->L302(数字) L21-->L303(布尔) L21-->L304(undefined) L21-->L305(null) L22-->L311(对象) L22-->L312(数组) L22-->L313(函数) flowchart TD L1([JS 数据类型判断方法]) L1-->L21(typeof) L1-->L22(instanceof) L1-->L23("===") L21--可以判断-->L311(字符串
+数字
+布尔
+undefined
+function) L21--不可以判断-->L312(null Vs Object
+Object Vs Array) L22-->L321(对象的具体类型) L23-->L33(null, undefined)</description></item></channel></rss>

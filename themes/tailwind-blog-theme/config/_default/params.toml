@@ -7,3 +7,4 @@ alpine = 'https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js'
 #alpine = 'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/alpinejs/3.9.0/cdn.min.js'
 # modify docseach.js to enable more than 5 (to 500) result items
 # docsearch = 'https://cdn.jsdelivr.net/npm/@docsearch/js@3'
+mermaid = 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'

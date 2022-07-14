@@ -35,3 +35,10 @@
   })
 </script>
 {{- end -}}
+
+{{- if in .Page.Content "class=\"mermaid\"" -}}
+<script src="{{ cond (isset .Site.Params.cdn.js "mermaid") .Site.Params.cdn.js.mermaid ("js/mermaid.min.js" | absURL) }}"></script>
+<script>
+  mermaid.initialize({startOnLoad: true});
+</script>
+{{- end -}}

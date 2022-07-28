@@ -1,0 +1,1 @@
+使用 `hugo new posts/xxx/xxx.md` 新增 post 

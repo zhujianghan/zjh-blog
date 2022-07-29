@@ -1,9 +1,17 @@
 <div
   x-data="{
     show: document.body.scrollTop > 20 || document.documentElement.scrollTop > 20,
+    bglg: '',
 
     handleScroll(){
       this.show = document.body.scrollTop > 20 || document.documentElement.scrollTop > 20
+      if (this.show){
+        let rate = document.body.scrollTopMax !== 0 ? document.body.scrollTop/document.body.scrollTopMax : document.documentElement.scrollTop/document.documentElement.scrollTopMax
+        rate = Math.round(rate * 100)
+        this.bglg = `linear-gradient(0deg, #10b981, white ${rate}%, white)`
+      } else {
+        this.bglg = ''
+      }
     },
 
     backToTop(){
@@ -16,7 +24,8 @@
   @click="backToTop"
 >
   <button
-    class="fixed bottom-10 right-5 p-3 text-white bg-emerald-500 rounded-full shadow-md hover:bg-emerald-600 hover:shadow-lg active:bg-emerald-800 active:shadow-lg transition duration-150 ease-in-out"
+    class="fixed bottom-10 right-5 p-3 rounded-full shadow-md"
+    :style="{background: bglg}"
     x-show="show"
   >
     {{ partial "svgs/heroicons/chevron-double-up_solid.svg" }}

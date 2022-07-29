@@ -58,7 +58,7 @@ Object Vs Array) L22-->L321(对象的具体类型) L23-->L33(null, undefined)</d
     handleScroll(){
       this.show = document.body.scrollTop > 20 || document.documentElement.scrollTop > 20
       if (this.show){
-        let rate = document.body.scrollTopMax !== 0 ? document.body.scrollTop/document.body.scrollTopMax : document.documentElement.scrollTop/document.documentElement.scrollTopMax
+        let rate = document.body.scrollTop !== 0 ? document.body.scrollTop/document.body.scrollHeight : document.documentElement.scrollTop/document.documentElement.scrollHeight
         rate = Math.round(rate * 100)
         this.bglg = `linear-gradient(0deg, #10b981, white ${rate}%, white)`
       } else {

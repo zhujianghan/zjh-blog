@@ -83,7 +83,7 @@ $ git merge &lt;branch_name&gt;    # 把一个分支合并到 master 分支中, 
     handleScroll(){
       this.show = document.body.scrollTop > 20 || document.documentElement.scrollTop > 20
       if (this.show){
-        let rate = document.body.scrollTopMax !== 0 ? document.body.scrollTop/document.body.scrollTopMax : document.documentElement.scrollTop/document.documentElement.scrollTopMax
+        let rate = document.body.scrollTop !== 0 ? document.body.scrollTop/document.body.scrollHeight : document.documentElement.scrollTop/document.documentElement.scrollHeight
         rate = Math.round(rate * 100)
         this.bglg = `linear-gradient(0deg, #10b981, white ${rate}%, white)`
       } else {

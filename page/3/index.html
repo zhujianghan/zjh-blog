@@ -157,7 +157,7 @@ ps：我这是wamp装的php，这里的php.ini不光在 wanmp/bin/php/php5.6.25/
     handleScroll(){
       this.show = document.body.scrollTop > 20 || document.documentElement.scrollTop > 20
       if (this.show){
-        let rate = document.body.scrollTopMax !== 0 ? document.body.scrollTop/document.body.scrollTopMax : document.documentElement.scrollTop/document.documentElement.scrollTopMax
+        let rate = document.body.scrollTop !== 0 ? document.body.scrollTop/document.body.scrollHeight : document.documentElement.scrollTop/document.documentElement.scrollHeight
         rate = Math.round(rate * 100)
         this.bglg = `linear-gradient(0deg, #10b981, white ${rate}%, white)`
       } else {

@@ -1,7 +1,7 @@
 ---
 title: "Jquery Fill Vue Input"
 date: 2022-07-28T09:10:12+08:00
-tags=['jquery','vue']
+tags: ['jquery','vue']
 draft: true
 ---
 

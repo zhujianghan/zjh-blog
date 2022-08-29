@@ -23,3 +23,6 @@ other = "Your Message"
 
 [sendnow]
 other = "Send Now"
+
+[post]
+clicktoshow = "Click To Show"

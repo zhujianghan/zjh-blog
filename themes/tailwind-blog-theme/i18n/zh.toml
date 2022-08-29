@@ -24,3 +24,5 @@ other = "Ihre Nachricht"
 [sendnow]
 other = "Abschicken"
 
+[post]
+clicktoshow = "点击查看"

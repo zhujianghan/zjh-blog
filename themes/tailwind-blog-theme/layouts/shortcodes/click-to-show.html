@@ -1,0 +1,14 @@
+<div x-data="{ show: false }">
+  <button
+    class="px-2 py-1 text-white text-sm bg-emerald-500 rounded"
+    @click="show = true"
+  >
+    {{ i18n "post.clicktoshow" }}
+  </button>
+  <div
+    class="mt-2 p-2 bg-gray-200 rounded"
+    x-show="show"
+  >
+    {{ .Inner }}
+  </div>
+</div>

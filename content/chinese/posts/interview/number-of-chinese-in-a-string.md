@@ -1,7 +1,7 @@
 +++
 title = "Interview | Number of Chinese in a String"
 date = 2022-08-26T16:18:04+08:00
-tags = ["go", "interview"]
+tags = ["go"]
 draft = false
 +++
 

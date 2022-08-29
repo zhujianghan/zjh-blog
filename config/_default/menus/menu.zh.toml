@@ -14,9 +14,14 @@ url = 'posts/server'
 weight = -107
 
 [[main]]
+name = '面试题'
+url = 'posts/interview'
+weight = -106
+
+[[main]]
 name = '其它'
 url = 'posts/other'
-weight = -106
+weight = -105
 
 [[link]]
 name = 'Github'

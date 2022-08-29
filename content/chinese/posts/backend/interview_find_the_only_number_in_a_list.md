@@ -1,5 +1,5 @@
 +++
-title = "Interview | Find_the_only_number_in_a_list"
+title = "Interview | Find the only number in a list"
 date = 2022-08-29T10:12:23+08:00
 tags = ["go", "interview"]
 draft = false

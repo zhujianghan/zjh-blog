@@ -1,5 +1,5 @@
 +++
-title = "Go_slice_写出代码的运行结果"
+title = "Go slice 写出代码的运行结果"
 date = 2022-08-29T16:34:55+08:00
 tags = ["go"]
 draft = false

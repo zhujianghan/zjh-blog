@@ -2,7 +2,7 @@
 title = "Interview | Number of Chinese in a String"
 date = 2022-08-26T16:18:04+08:00
 tags = ["go", "interview"]
-draft = true
+draft = false
 +++
 
 # 题目: 编写代码统计出字符串"hello沙河小王子"中汉字的数量

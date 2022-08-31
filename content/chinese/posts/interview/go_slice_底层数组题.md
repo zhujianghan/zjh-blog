@@ -33,10 +33,8 @@ func main() {
 ```
 
 {{<click-to-show>}}
-result: 
-<br>
-[1 2 3] [1 2 3]
-<br>
+result:  
+[1 2 3] [1 2 3]  
 [1 3]   [1 3 3]
 {{</click-to-show>}}
 

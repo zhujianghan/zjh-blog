@@ -55,10 +55,10 @@ func main() {
 ```
 
 {{<click-to-show>}}
-5 // returnValue = 5;x++;return returnValue <br>
-6 // x=5;x++;return x <br>
-5 // y=x (y=5);x++;return y<br>
-5 // 形参不改变原变量 <br>
+5 // returnValue = 5;x++;return returnValue  
+6 // x=5;x++;return x  
+5 // y=x (y=5);x++;return y  
+5 // 形参不改变原变量  
 {{</click-to-show>}}
 
 ---
@@ -81,8 +81,8 @@ func main() {
 ```
 
 {{<click-to-show>}}
-A   1   2   3   <br>
-B   10  2   12  <br>
-BB  10  12  22  <br>
-AA  1   3   4  <br>
+A   1   2   3  
+B   10  2   12  
+BB  10  12  22  
+AA  1   3   4  
 {{</click-to-show>}}

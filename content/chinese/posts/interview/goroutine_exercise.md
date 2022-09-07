@@ -42,6 +42,8 @@ FOR:
 		select {
 		case res := <-resChan:
 			fmt.Println(res)
+			close(numChan)
+			close(resChan)
 			break FOR
 		default:
 			fmt.Println("runtime.NumGoroutine() =", runtime.NumGoroutine(), time.Now())

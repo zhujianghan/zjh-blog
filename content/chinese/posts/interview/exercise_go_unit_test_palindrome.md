@@ -1,7 +1,7 @@
 +++
-title = "Exercise_go_test_是否回文"
+title = "Exercise_go_unit_test_是否回文"
 date = 2022-09-09T17:25:46+08:00
-tags = ["go", "test"]
+tags = ["go", "unit-test"]
 draft = false
 +++
 

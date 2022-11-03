@@ -2,6 +2,8 @@
 <script defer src=https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js></script></head><body class="h-screen relative"><div><div class="sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white dark:bg-slate-900" x-data="{
     hideNavs: true,
 
+    hideMenuChildren: true,
+
     openThemesList: false,
     theme: localStorage.theme === 'dark' ? 'dark' : 'light',
     toggleTheme(t = 'light') {

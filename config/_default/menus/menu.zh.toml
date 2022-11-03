@@ -23,7 +23,29 @@ name = '其它'
 url = 'posts/other'
 weight = -105
 
+[[main]]
+name = 'projects'
+weight = -100
+
+[[main]]
+parent = 'projects'
+name = 'music-colorful-blocks'
+url = 'https://zhujianghan.github.io/music-colorful-blocks'
+weight = 1
+
+[[main]]
+parent = 'projects'
+name = 'custom-excalidraw'
+url = 'https://zhujianghan.github.io/custom-excalidraw'
+weight = 2
+
+[[main]]
+parent = 'projects'
+name = 'image-merger'
+url = 'https://zhujianghan.github.io/image-merger'
+weight = 3
+
 [[link]]
 name = 'Github'
 weight = 1
-url = 'https://github.com/#'
+url = 'https://github.com/zhujianghan'

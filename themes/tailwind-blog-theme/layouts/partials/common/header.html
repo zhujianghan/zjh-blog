@@ -3,6 +3,8 @@
   x-data="{
     hideNavs: true,
 
+    hideMenuChildren: true,
+
     openThemesList: false,
     theme: localStorage.theme === 'dark' ? 'dark' : 'light',
     toggleTheme(t = 'light') {
@@ -33,9 +35,25 @@
             <ul class="flex space-x-8">
               {{ range .Site.Menus.main }}
               <li>
+                {{ if not .HasChildren }}
                 <a class="hover:text-emerald-600 dark:hover:text-emerald-400" href="{{ .URL | relLangURL }}">
                   {{- .Name -}}
                 </a>
+                {{ else }}
+                <div class="relative" @mouseover="hideMenuChildren = false" @mouseout="hideMenuChildren = true">
+                  <div class="cursor-pointer">{{- .Name -}}</div>
+                  <ul class="list-disc list-inside absolute w-64 bg-white" x-show="!hideMenuChildren">
+                    {{ range .Children }}
+                    <li class="py-1.5">
+                      <a class="font-normal underline hover:text-emerald-600 dark:hover:text-emerald-400"
+                         href="{{ .URL | relLangURL }}">
+                        {{- .Name -}}
+                      </a>
+                    </li>
+                    {{ end }}
+                  </ul>
+                </div>
+                {{ end }}
               </li>
               {{ end }}
             </ul>

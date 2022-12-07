@@ -44,7 +44,16 @@ firewall-cmd --list-all
 # 查看指定
 firewall-cmd --query-port=8080/tcp
 </code></pre><p>1.7 移除端口</p><pre tabindex=0><code>firewall-cmd --remove-port=8080/tcp  --permanent
-</code></pre><h2 id=2-supervisord-守护进程>2. supervisord 守护进程</h2><p>2.1 安装</p><pre tabindex=0><code>pip install supervisor
+</code></pre><h2 id=2-supervisord-守护进程>2. supervisord 守护进程</h2><p>2.1 安装</p><pre tabindex=0><code># 安装
+pip install supervisor
+# supervisor 加入到开机自启
+# http://supervisord.org/running.html
+# https://github.com/Supervisor/initscripts
+
+# centos 中 yum install supervisor, 
+# 这种形式安装的 supervisor 会默认加入到 systemd 中, 不用手动设置开机开启
+# systemctl status supervisord
+# systemctl enable supervisord
 </code></pre><p>2.2 生成配置文件</p><pre tabindex=0><code>echo_supervisord_conf &gt; /etc/supervisord.conf
 </code></pre><p>2.3 修改配置文件</p><pre tabindex=0><code># 最后一行加上
 [include]

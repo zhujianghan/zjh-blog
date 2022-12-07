@@ -23,6 +23,10 @@ draft = false
 1. 生成证书, 检测域名所有权
 acme.sh  --issue  -d www.aaa.com --webroot  /www/wwwroot/www.aaa.com
 
+#或 acme.sh  --issue  -d www.aaa.com --nginx  /usr/local/nginx/conf/sites-enabled/www.aaa.com.conf
+# 注意: 在 issue 阶段不要在 conf 中设置 listen 443 及 ssl 相关配置, 否则在没有正确的 cert&key 文件时会有报错
+# 应在 issue 执行后, 再在 conf 文件中添加 ssl 相关配置
+
 2. 配置 nginx 文件路径
   ssl_certificate        /usr/local/nginx/ssl/www.aaa.com/cert.pem;
   ssl_certificate_key    /usr/local/nginx/ssl/www.aaa.com/key.pem;

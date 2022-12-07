@@ -53,7 +53,18 @@ firewall-cmd --remove-port=8080/tcp  --permanent
 ## 2. supervisord 守护进程
 2.1 安装
 ```
+# 安装
 pip install supervisor
+# supervisor 加入到开机自启
+# http://supervisord.org/running.html
+# https://github.com/Supervisor/initscripts
+
+# centos 中 yum install supervisor, 
+# 这种形式安装的 supervisor 会默认加入到 systemd 中, 不用手动设置开机开启
+# systemctl status supervisord
+# systemctl enable supervisord
+
+
 ```
 2.2 生成配置文件
 ```

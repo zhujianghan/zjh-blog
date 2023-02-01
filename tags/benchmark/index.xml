@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>benchmark on Fourleaf Blog</title><link>https://zhujianghan.github.io/zjh-blog/tags/benchmark/</link><description>Recent content in benchmark on Fourleaf Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 01 Feb 2023 10:04:05 +0800</lastBuildDate><atom:link href="https://zhujianghan.github.io/zjh-blog/tags/benchmark/index.xml" rel="self" type="application/rss+xml"/><item><title>Apache_bench_in_go__hey</title><link>https://zhujianghan.github.io/zjh-blog/posts/server/apache_bench_in_go__hey/</link><pubDate>Wed, 01 Feb 2023 10:04:05 +0800</pubDate><guid>https://zhujianghan.github.io/zjh-blog/posts/server/apache_bench_in_go__hey/</guid><description>使用 hey 代替 ab 对网站应用做性能测试 (服务器配置) https://github.com/rakyll/hey
+hey is a tiny program that sends some load to a web application.
+二八定律: 80% 的请求(访问)集中在 20% 的时间内
+假设一个网站每日 pv (page visit) 300w,
+也就是 300w*80% &amp;lt;=&amp;gt; 3600*24*20%, 240w pv 在 17280s 内, 240*10000/17280 = 138 QPS (query per second)
+如果单台机器支持的 QPS 在 50, 那么需要 3 台这样的机器才能满足需求
+## hey 执行结果示例 $ hey http://localhost:8080/api/tmp Summary: Total: 0.1239 secs Slowest: 0.0961 secs Fastest: 0.0006 secs Average: 0.</description></item></channel></rss>

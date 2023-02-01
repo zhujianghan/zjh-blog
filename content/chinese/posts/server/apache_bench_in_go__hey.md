@@ -1,8 +1,8 @@
 +++
 title = "Apache_bench_in_go__hey"
 date = 2023-02-01T10:04:05+08:00
-tags = ["apache bench"]
-draft = true
+tags = ["benchmark"]
+draft = false
 +++
 
 ## 使用 hey 代替 ab 对网站应用做性能测试 (服务器配置)

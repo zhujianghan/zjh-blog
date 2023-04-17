@@ -38,3 +38,15 @@ acme.sh  --issue  -d www.aaa.com --webroot  /www/wwwroot/www.aaa.com
 --reloadcmd "/etc/init.d/nginx reload"
 
 ```
+
+
+> 注意: 使用 nginx mode 时, 在实施后 要将配置文件中的 80 端口同时打开, 才能正常 renew
+> 
+> ```
+> listen 80;
+> if ($host = aaa.com) {
+>   rewrite ^(/.*)$ https://www.$host$1 permanent;
+> }
+> ```
+> 
+> 此外, 除了单独指定 www.aaa.com.conf 文件, 也可以直接指定 nginx.conf 文件, 因为 nginx.conf 中 include 了 .../*.conf 文件

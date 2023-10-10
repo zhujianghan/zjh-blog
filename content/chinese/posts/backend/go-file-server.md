@@ -14,9 +14,11 @@ func main() {
 	// http.ListenAndServe(":8080", http.FileServer(http.Dir("./public")))
 
 	// 方式2: 可自动生成对应文件列表页面
-	fs := http.FileServer(http.Dir("public"))
-	http.Handle("/public/", http.StripPrefix("/public/", fs))
-	http.ListenAndServe(":8080", nil)
+    fs := http.FileServer(http.Dir("public"))
+    // http.Handle("/public/", http.StripPrefix("/public/", fs))
+    // http.Handle("/", http.StripPrefix("/public/", fs))
+    http.Handle("/", fs)
+    http.ListenAndServe(":8080", nil)
 }
 
 

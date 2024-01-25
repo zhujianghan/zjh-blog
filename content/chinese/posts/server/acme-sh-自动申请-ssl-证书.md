@@ -50,3 +50,9 @@ acme.sh  --issue  -d www.aaa.com --webroot  /www/wwwroot/www.aaa.com
 > ```
 > 
 > 此外, 除了单独指定 www.aaa.com.conf 文件, 也可以直接指定 nginx.conf 文件, 因为 nginx.conf 中 include 了 .../*.conf 文件
+
+
+### 证书未能自动更新
+1. 手动执行 `acme.sh --renew -d mydomain.com`, 遇到错误 `Error, can not get domain token "type":"http-01"...`
+2. 可能是默认 zerossl 的问题, 更换服务商为 letsencrypt  (参考: https://github.com/acmesh-official/acme.sh/issues/4927, https://github.com/acmesh-official/acme.sh/wiki/Server)
+3. 执行 `acme.sh --renew -d mydomain.com --server letsencrypt`

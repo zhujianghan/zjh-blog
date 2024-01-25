@@ -36,7 +36,7 @@
 # 开放多个端口
 firewall-cmd --add-port=8081-8100/tcp --permanent
 </code></pre><p>1.4 重启防火墙</p><pre tabindex=0><code>systemctl restart firewall.service
-</code></pre><p>1.5 重载配置</p><pre tabindex=0><code>firewall-cmd --realod
+</code></pre><p>1.5 重载配置</p><pre tabindex=0><code>firewall-cmd --reload
 </code></pre><p>1.6 查看端口开启情况</p><pre tabindex=0><code>netstat -nltp
 # 或者使用 firewall-cmd 查看
 # 查看所有
@@ -86,7 +86,7 @@ root      7788  7650  0 04:23 pts/0    00:00:00 grep --color=auto supervisord
 </code></pre><p>2.7 supervisor 查看守护的进程</p><pre tabindex=0><code>supervisorctl status
 </code></pre><p>2.8 更新 supervisor 配置文件后</p><pre tabindex=0><code>supervisorctl reread // 重新读取配置文件
 supervisorctl update // 更新 process group
-supervisorctl start|restasrt xxx   // start 或 restart
+supervisorctl start|restart xxx   // start 或 restart
 </code></pre><p>参考:
 <a href=https://blog.csdn.net/u_ranfa/article/details/89888151>csdn: Centos7 开放8080端口</a>
 <a href=https://blog.csdn.net/qq_41153478/article/details/83033688>csdn: Centos7 防火墙配置</a>

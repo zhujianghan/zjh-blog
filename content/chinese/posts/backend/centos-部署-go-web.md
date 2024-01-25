@@ -34,7 +34,7 @@ systemctl restart firewall.service
 ```
 1.5 重载配置
 ```
-firewall-cmd --realod
+firewall-cmd --reload
 ```
 1.6 查看端口开启情况
 ```
@@ -127,7 +127,7 @@ supervisorctl status
 ```
 supervisorctl reread // 重新读取配置文件
 supervisorctl update // 更新 process group
-supervisorctl start|restasrt xxx   // start 或 restart
+supervisorctl start|restart xxx   // start 或 restart
 ```
 
 

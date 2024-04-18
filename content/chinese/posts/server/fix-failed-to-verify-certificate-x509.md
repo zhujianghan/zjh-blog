@@ -54,6 +54,10 @@ func WillExpireIn7Days(hostname string) (bool, time.Time, error) {
 3. 将该文件上传到服务器, 如果是centos, 将该文件上传到目录 `/etc/pki/ca-trust/source/anchors/` 下, 将文件的后缀名由 .pem 改为 .crt,
 4. 执行命令 `yum install -y ca-certificate` 后 再执行 `update-ca-trust extract`  
 5. 此时就可以正常 curl 了, go 中的 tls.Dial 也恢复正常  
+  
 
 
-参考文章: [解决cURL error 60 Peer's Certificate issuer is not recognized.问题](https://www.xiaoxiaoguo.cn/php/cURL-error-60.html)
+
+参考文章:   
+- [解决cURL error 60 Peer's Certificate issuer is not recognized.问题](https://www.xiaoxiaoguo.cn/php/cURL-error-60.html)  
+- [stackoverflow: curl: (60) Peer's Certificate issuer is not recognized](https://stackoverflow.com/questions/47676980/curl-60-peers-certificate-issuer-is-not-recognized)  

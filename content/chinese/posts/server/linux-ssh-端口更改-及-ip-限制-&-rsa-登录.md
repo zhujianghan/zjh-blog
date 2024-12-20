@@ -46,3 +46,31 @@ AuthorizedKeysFile .ssh/authorized_keys
 
 
 
+> 20241220 新增
+> 上述是 centos 更改 ssh 端口, 不适用 ubuntu 2204 以后的版本, ubuntu 最新版本 配置ssh端口如下
+[参考自 csdn: 【解决】Ubuntu SSH Server 修改默认端口无效](https://blog.csdn.net/Ervoconite/article/details/132987943)
+
+### 1. enable ufw
+默认 ufw 关闭, 首先加入端口, 防止开启后 ssh 退出
+```bash
+ufw allow 22/tcp
+ufw allow 26000/tcp
+
+ufw enable
+
+# 查看
+ufw status
+```
+
+### 2. 修改 /etc/ssh/sshd_config 配置文件, 设置 Port=26000
+### 3. 打开 /usr/lib/systemd/system/ssh.socket, 设置 ListenStream=26000
+### 4. 重启 ssh 服务
+```
+systemctl daemon-reload
+
+systemctl restart ssh.socket
+```
+
+### 5. ufw deny 22/tcp
+
+

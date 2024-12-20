@@ -1,7 +1,7 @@
 +++
 title = 'linux-ssh-端口更改-及-ip-限制-&-rsa-登录'
 date = 2022-04-16T11:29:14+08:00
-tags = ['linux']
+tags = ['linux', 'centos', 'ubuntu', 'ssh', 'ufw']
 draft = false
 +++
 

@@ -52,3 +52,12 @@ fail2ban-client get sshd banned
 
 fail2ban-client status sshd
 ```
+
+
+```
+# 查看登录尝试记录
+
+lastb # 显示显示失败的登录尝试
+
+last  # 与 lastb 类似，但显示的是所有登录尝试，包括成功的登录
+```

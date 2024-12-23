@@ -1,5 +1,5 @@
 +++
-title = 'rm-和-chmod,-删除和更新权限'
+title = 'rm和chmod-删除和更新权限'
 date = 2018-12-06T11:31:01+08:00
 tags = ['linux']
 draft = false

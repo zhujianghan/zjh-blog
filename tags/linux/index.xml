@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>linux on Fourleaf Blog</title><link>https://zhujianghan.github.io/zjh-blog/tags/linux/</link><description>Recent content in linux on Fourleaf Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 27 Oct 2022 10:01:10 +0800</lastBuildDate><atom:link href="https://zhujianghan.github.io/zjh-blog/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>vmware-共享文件夹设置</title><link>https://zhujianghan.github.io/zjh-blog/posts/server/vmware-share-folder/</link><pubDate>Thu, 27 Oct 2022 10:01:10 +0800</pubDate><guid>https://zhujianghan.github.io/zjh-blog/posts/server/vmware-share-folder/</guid><description>虚拟机关机状态下, vmware中 设置-选项-共享文件夹 添加要共享的文件夹 虚拟机开机, vmware中 虚拟机-安装VMware-Tools 虚拟机中安装 open-vm-tools-desktop (has gui) 或 open-vm-tools (no gui) 虚拟机中执行 /usr/bin/vmhgfs-fuse .host:/ /home/user1/shares -o subtype=vmhgfs-fuse,allow_other 挂载共享文件夹, ubuntu 提示 allow_user 需要其它设置, 则删除 &amp;lsquo;,allow_other&amp;rsquo; 即可 open-vm-tools 安装参考官方文档
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>linux on Fourleaf Blog</title><link>https://zhujianghan.github.io/zjh-blog/tags/linux/</link><description>Recent content in linux on Fourleaf Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 23 Dec 2024 15:06:00 +0800</lastBuildDate><atom:link href="https://zhujianghan.github.io/zjh-blog/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>gofrp (内网穿透) 的安装和使用</title><link>https://zhujianghan.github.io/zjh-blog/posts/server/go-frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link><pubDate>Mon, 23 Dec 2024 15:06:00 +0800</pubDate><guid>https://zhujianghan.github.io/zjh-blog/posts/server/go-frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid><description>文档地址
+使用 gogrp 通过自定义域名访问内网的 Web 服务 1. 安装 分别在 client 和 server 下载便携版的可执行文件,
+如 client 是 windows 系统, 则下载后的文件为
+frpc.exe, frpc.toml, frps.exe, frps.toml, LICENSE, client 端只需要 frpc.exe 及 frpc.toml 即可
+如 server 是 linux 系统, 则下载后的文件只需要 frps 及 frps.toml
+2. 配置 # frps.toml 配置
+bindPort = 7000
+vhostHTTPPort = 8600 # 要设置 vhostHTTPPORT, 最后通过服务端的 ip:vhost端口 进行访问 # frpc.toml 配置
+serverAddr = &amp;#34;xx.xx.xx.xx&amp;#34;
+serverPort = 7000
+[[proxies]]
+name = &amp;#34;test-web&amp;#34;
+type = &amp;#34;http&amp;#34;
+localIP = &amp;#34;127.</description></item><item><title>vmware-共享文件夹设置</title><link>https://zhujianghan.github.io/zjh-blog/posts/server/vmware-share-folder/</link><pubDate>Thu, 27 Oct 2022 10:01:10 +0800</pubDate><guid>https://zhujianghan.github.io/zjh-blog/posts/server/vmware-share-folder/</guid><description>虚拟机关机状态下, vmware中 设置-选项-共享文件夹 添加要共享的文件夹 虚拟机开机, vmware中 虚拟机-安装VMware-Tools 虚拟机中安装 open-vm-tools-desktop (has gui) 或 open-vm-tools (no gui) 虚拟机中执行 /usr/bin/vmhgfs-fuse .host:/ /home/user1/shares -o subtype=vmhgfs-fuse,allow_other 挂载共享文件夹, ubuntu 提示 allow_user 需要其它设置, 则删除 &amp;lsquo;,allow_other&amp;rsquo; 即可 open-vm-tools 安装参考官方文档
 文件夹挂载 参考文档
 参考csdn: vmware 挂载共享文件夹</description></item><item><title>Linux Crontab Pwd</title><link>https://zhujianghan.github.io/zjh-blog/posts/server/linux-crontab-pwd/</link><pubDate>Fri, 26 Aug 2022 10:08:16 +0800</pubDate><guid>https://zhujianghan.github.io/zjh-blog/posts/server/linux-crontab-pwd/</guid><description>背景: 使用 crontab -e 添加定时任务后, 发现任务没有如希望的执行, 发现要执行的命令是使用了相对路径引入文件, 推测是文件路径不正常
 在 linux 中 root 用户执行命令 crotab -e 添加任务获取当前工作目录

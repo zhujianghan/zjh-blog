@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Server | Posts on Fourleaf Blog</title><link>https://zhujianghan.github.io/zjh-blog/posts/server/</link><description>Recent content in Server | Posts on Fourleaf Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 20 Dec 2024 17:43:00 +0800</lastBuildDate><atom:link href="https://zhujianghan.github.io/zjh-blog/posts/server/index.xml" rel="self" type="application/rss+xml"/><item><title>linux 安装、配置 fail2ban 避免服务器恶意登录</title><link>https://zhujianghan.github.io/zjh-blog/posts/server/linux-%E5%AE%89%E8%A3%85-%E9%85%8D%E7%BD%AE-fail2ban-%E9%81%BF%E5%85%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%81%B6%E6%84%8F%E7%99%BB%E5%BD%95/</link><pubDate>Fri, 20 Dec 2024 17:43:00 +0800</pubDate><guid>https://zhujianghan.github.io/zjh-blog/posts/server/linux-%E5%AE%89%E8%A3%85-%E9%85%8D%E7%BD%AE-fail2ban-%E9%81%BF%E5%85%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%81%B6%E6%84%8F%E7%99%BB%E5%BD%95/</guid><description>详见 github: fail2ban
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Server | Posts on Fourleaf Blog</title><link>https://zhujianghan.github.io/zjh-blog/posts/server/</link><description>Recent content in Server | Posts on Fourleaf Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 23 Dec 2024 15:06:00 +0800</lastBuildDate><atom:link href="https://zhujianghan.github.io/zjh-blog/posts/server/index.xml" rel="self" type="application/rss+xml"/><item><title>gofrp (内网穿透) 的安装和使用</title><link>https://zhujianghan.github.io/zjh-blog/posts/server/go-frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link><pubDate>Mon, 23 Dec 2024 15:06:00 +0800</pubDate><guid>https://zhujianghan.github.io/zjh-blog/posts/server/go-frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid><description>文档地址
+使用 gogrp 通过自定义域名访问内网的 Web 服务 1. 安装 分别在 client 和 server 下载便携版的可执行文件,
+如 client 是 windows 系统, 则下载后的文件为
+frpc.exe, frpc.toml, frps.exe, frps.toml, LICENSE, client 端只需要 frpc.exe 及 frpc.toml 即可
+如 server 是 linux 系统, 则下载后的文件只需要 frps 及 frps.toml
+2. 配置 # frps.toml 配置
+bindPort = 7000
+vhostHTTPPort = 8600 # 要设置 vhostHTTPPORT, 最后通过服务端的 ip:vhost端口 进行访问 # frpc.toml 配置
+serverAddr = &amp;#34;xx.xx.xx.xx&amp;#34;
+serverPort = 7000
+[[proxies]]
+name = &amp;#34;test-web&amp;#34;
+type = &amp;#34;http&amp;#34;
+localIP = &amp;#34;127.</description></item><item><title>linux 安装、配置 fail2ban 避免服务器恶意登录</title><link>https://zhujianghan.github.io/zjh-blog/posts/server/linux-%E5%AE%89%E8%A3%85-%E9%85%8D%E7%BD%AE-fail2ban-%E9%81%BF%E5%85%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%81%B6%E6%84%8F%E7%99%BB%E5%BD%95/</link><pubDate>Fri, 20 Dec 2024 17:43:00 +0800</pubDate><guid>https://zhujianghan.github.io/zjh-blog/posts/server/linux-%E5%AE%89%E8%A3%85-%E9%85%8D%E7%BD%AE-fail2ban-%E9%81%BF%E5%85%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%81%B6%E6%84%8F%E7%99%BB%E5%BD%95/</guid><description>详见 github: fail2ban
 安装 fail2ban, 以 ubuntu 为例 apt update &amp;amp;&amp;amp; apt upgrade
 apt install fail2ban
 systemctl start fail2ban

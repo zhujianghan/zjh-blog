@@ -16,4 +16,6 @@ maxretry = 3
 bantime = 2592000 # 2592000second = 30day, -1 为永久封禁 重启 fail2ban sudo systemctl restart fail2ban #重启
 sudo fail2ban-client status #查看状态
 sudo fail2ban-client status sshd #查看sshd的详细状态 查看已禁用的ip fail2ban-client get sshd banned
-fail2ban-client status sshd</description></item></channel></rss>
+fail2ban-client status sshd # 查看登录尝试记录
+lastb # 显示显示失败的登录尝试
+last # 与 lastb 类似，但显示的是所有登录尝试，包括成功的登录</description></item></channel></rss>

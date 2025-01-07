@@ -15,7 +15,7 @@ CMD - 用途：CMD 指令用于指定容器启动时要执行的命令。
 - 运行应用的主进程。
 - 执行容器的默认命令。
 - 可以被 docker run 命令中的命令覆盖。
-配置示例 ########################################################### ###################### General Setup ###################### ########################################################### ### Paths ################################################# # Choose storage path on your machine.</description></item><item><title>gofrp (内网穿透) 的安装和使用</title><link>https://zhujianghan.github.io/zjh-blog/posts/server/go-frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link><pubDate>Mon, 23 Dec 2024 15:06:00 +0800</pubDate><guid>https://zhujianghan.github.io/zjh-blog/posts/server/go-frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid><description>文档地址
+配置示例 # .</description></item><item><title>gofrp (内网穿透) 的安装和使用</title><link>https://zhujianghan.github.io/zjh-blog/posts/server/go-frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link><pubDate>Mon, 23 Dec 2024 15:06:00 +0800</pubDate><guid>https://zhujianghan.github.io/zjh-blog/posts/server/go-frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid><description>文档地址
 使用 gogrp 通过自定义域名访问内网的 Web 服务 1. 安装 分别在 client 和 server 下载便携版的可执行文件,
 如 client 是 windows 系统, 则下载后的文件为
 frpc.exe, frpc.toml, frps.exe, frps.toml, LICENSE, client 端只需要 frpc.exe 及 frpc.toml 即可

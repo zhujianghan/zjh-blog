@@ -105,5 +105,6 @@ export {
 ```
 
 [参考掘金:聊聊单点登录（SSO）](https://juejin.cn/post/7454474417318690831)  
+该文中提到双 token 中的 refresh_token 用于服务端控制访问权限(退出登录)，但实际应用中，refresh_token 的作用是刷新 access_token，而不是控制访问权限; 并且后端存储 access_token 也能控制 access_token 的失效。  
 
 [代码见github: demo-refresh-token-202501](https://github.com/llxcyzgh/demo-refresh-token-202501)

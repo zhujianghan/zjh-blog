@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Server | Posts on Fourleaf Blog</title><link>https://zhujianghan.github.io/zjh-blog/posts/server/</link><description>Recent content in Server | Posts on Fourleaf Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 23 Dec 2024 15:06:00 +0800</lastBuildDate><atom:link href="https://zhujianghan.github.io/zjh-blog/posts/server/index.xml" rel="self" type="application/rss+xml"/><item><title>gofrp (内网穿透) 的安装和使用</title><link>https://zhujianghan.github.io/zjh-blog/posts/server/go-frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link><pubDate>Mon, 23 Dec 2024 15:06:00 +0800</pubDate><guid>https://zhujianghan.github.io/zjh-blog/posts/server/go-frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid><description>文档地址
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Server | Posts on Fourleaf Blog</title><link>https://zhujianghan.github.io/zjh-blog/posts/server/</link><description>Recent content in Server | Posts on Fourleaf Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 10 Feb 2025 16:07:00 +0800</lastBuildDate><atom:link href="https://zhujianghan.github.io/zjh-blog/posts/server/index.xml" rel="self" type="application/rss+xml"/><item><title>docker compose 部署 nextjs &amp; mysql</title><link>https://zhujianghan.github.io/zjh-blog/posts/server/docker-compose%E9%83%A8%E7%BD%B2nextjsmysql%E6%9C%8D%E5%8A%A1/</link><pubDate>Mon, 10 Feb 2025 16:07:00 +0800</pubDate><guid>https://zhujianghan.github.io/zjh-blog/posts/server/docker-compose%E9%83%A8%E7%BD%B2nextjsmysql%E6%9C%8D%E5%8A%A1/</guid><description># dock 文件夹为根文件夹
+# 其下包涵 mysql 和 next 文件夹, 及 docker-compose.yml 和 .env 文件 # dock/.env
+###########################################################
+###################### General Setup ######################
+###########################################################
+### Paths #################################################
+# Choose storage path on your machine. For all storage systems
+DATA_PATH_HOST=~/.dock/data
+### Drivers ################################################
+# All volumes driver
+VOLUMES_DRIVER=local
+# All Networks driver
+NETWORKS_DRIVER=bridge
+### Docker compose files ##################################
+# Select which docker-compose files to include. If using docker-sync append `:docker-compose.sync.yml` at the end
+COMPOSE_FILE=docker-compose.</description></item><item><title>gofrp (内网穿透) 的安装和使用</title><link>https://zhujianghan.github.io/zjh-blog/posts/server/go-frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link><pubDate>Mon, 23 Dec 2024 15:06:00 +0800</pubDate><guid>https://zhujianghan.github.io/zjh-blog/posts/server/go-frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid><description>文档地址
 使用 gogrp 通过自定义域名访问内网的 Web 服务 1. 安装 分别在 client 和 server 下载便携版的可执行文件,
 如 client 是 windows 系统, 则下载后的文件为
 frpc.exe, frpc.toml, frps.exe, frps.toml, LICENSE, client 端只需要 frpc.exe 及 frpc.toml 即可

@@ -1,7 +1,7 @@
 +++
 title = 'mysql 220k 数据行时, count() 很慢, 要2s多'
 date = 2025-03-21T15:43:00+08:00
-tags = ['linux']
+tags = ['linux', 'mysql']
 draft = false
 +++
 

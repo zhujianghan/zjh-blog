@@ -202,5 +202,19 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 
 > 注意: 这里使用 目录挂载的方式会导致在容器中 执行 npm run install 生成的 node_modules 目录属主为 root, 而非主机中执行 docker compose 的用户. 
-> 可以 `docker run -it -v /home/wzh/docktmp/nextjs:/myapp:rw node:22-alpine sh` 进行一个容器(默念就是root用户), 在其中有权限去删除上个容器中的 root 生成的文件夹
+> 可以 `docker run -it -v /home/demouser/docktmp/nextjs:/myapp:rw node:22-alpine sh` 进行一个容器(默认就是root用户), 在其中有权限去删除上个容器中的 root 生成的文件夹
 > 推荐使用 Copy 代码到容器方式, 避免在主机生成 node_modules 等文件夹
+
+## 如何进入mysql容器执行数据库导入导出
+```
+# 进入容器
+docker compose exec mysql bin/bash
+
+# 导出 sql
+mysqldump -u <username> -p <source_database> > dump.sql
+
+# 导入 sql
+mysql -u <username> -p <target_database> < dump.sql
+```
+
+

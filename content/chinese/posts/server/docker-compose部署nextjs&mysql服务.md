@@ -218,3 +218,42 @@ mysql -u <username> -p <target_database> < dump.sql
 ```
 
 
+## docker compose 操作
+1. 查看日志 `docker compose logs -t next`  -t 表示显示时间, 默认不显示时间
+2. 当容器启动(cmd 执行)失败时, 使用 `docker-compose run --entrypoint /bin/sh next` 以交互模式运行容器，覆盖默认入口点, 进入容器后检查
+3. 容器内的用户与执行 docker compose 的用户保持一致(非root用户): 在 docker-compose.yml 中对 service 指定 user 为当前用户; 然后在容器的 Dockerfile 中新建这个用户(id, groupid), 且把需要的文件权限给到这个用户(非在 Dockerfile中 User newUser, 这样的文件权限还是不对)
+   ```
+   ### next #####################################################
+  next:
+    restart: always
+    depends_on:
+      - mysql
+    build:
+      context: ./next
+      args:
+        - NODE_VERSION=${NODE_VERSION}
+        - CURRENT_UID=${CURRENT_UID}
+        - CURRENT_GID=${CURRENT_GID}
+    user: "${CURRENT_UID}:${CURRENT_GID}"
+    stdin_open: true
+    networks:
+      - frontend
+      - backend
+    volumes:
+
+   ```
+
+   ```
+...
+ARG CURRENT_UID=1000
+ARG CURRENT_GID=1000
+# 创建非 root 用户和组
+RUN addgroup -g ${CURRENT_GID} nonrootuser && \
+    adduser -u ${CURRENT_UID} -G nonrootuser -D nonrootuser
+
+RUN chown -R nonrootuser:nonrootuser /usr/src/app
+RUN chown nonrootuser:nonrootuser /entrypoint.sh
+...
+   ```
+
+

@@ -1,8 +1,8 @@
 +++
-title = 'linux 设置 smb'
-date = 2025-08-28T14:02:00+08:00
-tags = ['linux', 'smb']
-draft = false
+title = 'linux 设置 smb'  
+date = 2025-08-28T14:02:00+08:00  
+tags = ['linux', 'smb']  
+draft = false  
 +++
 
 
@@ -68,7 +68,7 @@ sudo smbpasswd -a smb_jackma
 >
 > 4. 使用 sudo smbstatus -b 查看已登录(连接)的用户信息
 >
-> 5. windows 连接不上 smb 解决办法:
->    控制面板->程序->程序和功能->启用或关闭 Windows 功能-> SMB 1.0 ...和 SMB Direct 都选中
+> 5. windows 连接不上 smb 解决办法:  
+>    控制面板->程序->程序和功能->启用或关闭 Windows 功能-> SMB 1.0 ...和 SMB Direct 都选中  
 >    运行->gpedit.msc->管理模板->网络->Lanman工作站->启用不安全的来宾登录->已启用
 

@@ -67,3 +67,8 @@ sudo smbpasswd -a smb_jackma
 > useradd 适用于批量创建, adduser 适用于交互式创建(新手友好)
 >
 > 4. 使用 sudo smbstatus -b 查看已登录(连接)的用户信息
+>
+> 5. windows 连接不上 smb 解决办法:
+>    控制面板->程序->程序和功能->启用或关闭 Windows 功能-> SMB 1.0 ...和 SMB Direct 都选中
+>    运行->gpedit.msc->管理模板->网络->Lanman工作站->启用不安全的来宾登录->已启用
+

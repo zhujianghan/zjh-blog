@@ -25,6 +25,25 @@ sudo apt install samba
 	writeable = yes
 ```
 
+```
+# 最终  /etc/samba/smb.conf 设置
+...
+[smb_share]
+	path = /data/smb_share
+	comment = parent folder
+	write list = @sambashare
+	valid users = @sambashare
+	writeable = yes
+	root preexec = /etc/samba/check_user_connection.sh %u %I %S
+	root preexec close = yes
+	inherit permissions = yes
+	hide unreadable = yes
+; 这里 inherit permissions 表示新增加的文件(夹) rwx 继承父文件夹, 从而让 用户A 新增的文件(夹), 用户B也有 rw 权限
+; hide unreadable 可选, 表示隐藏不可见的文件(夹)
+; 更多 smb.conf 设置参考 https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html
+```
+
+
 ## add user
 ```
 # first: add linux user

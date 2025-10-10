@@ -60,7 +60,7 @@ sudo smbpasswd -a smb_jackma
 ```
 
 ## set privilege
-- /data/smb_share: chown 设置 root:root, 子文件夹不允许用户删除
+- /data/smb_share: chown 设置 root:root, chmod rwxr-xr-x, 让用户可访问, 子文件夹不允许用户删除、更名等
 - /data/smb_share/foler1: chown 设置 sambashare:sambashare, 所有 smb 用户均可访问、编辑、删除文件; 同时设置 chmod 2770 让新创建的文件(夹)有同样的 group(smabashare)
 - /data/smb_share/folerx: chown 设置 smb_groupx:smb_groupx, 只有当 smb 用户属于 smb_groupx 组时, 才有该文件夹的 wrx 权限
 

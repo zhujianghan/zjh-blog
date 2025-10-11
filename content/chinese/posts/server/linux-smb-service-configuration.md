@@ -34,11 +34,17 @@ sudo apt install samba
 	write list = @sambashare
 	valid users = @sambashare
 	writeable = yes
+
 	root preexec = /etc/samba/check_user_connection.sh %u %I %S
 	root preexec close = yes
+
 	inherit permissions = yes
+	nt acl support = no
+	store dos attributes = no
+	map archive = no
+
 	hide unreadable = yes
-; 这里 inherit permissions 表示新增加的文件(夹) rwx 继承父文件夹, 从而让 用户A 新增的文件(夹), 用户B也有 rw 权限
+; 这里 inherit permissions 表示新增加的文件(夹) rwx 继承父文件夹, 从而让 用户A 新增的文件(夹), 用户B也有 rw 权限; nt acl support, store dos attributes, map archive 设置表示禁止映射到 windows 后, 用 office(或wps等) 编辑保存的文件自动添加了 +(扩展权限 acl)权限.
 ; hide unreadable 可选, 表示隐藏不可见的文件(夹)
 ; 更多 smb.conf 设置参考 https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html
 ```
@@ -60,7 +66,7 @@ sudo smbpasswd -a smb_jackma
 ```
 
 ## set privilege
-- /data/smb_share: chown 设置 root:root, chmod rwxr-xr-x, 让用户可访问, 子文件夹不允许用户删除、更名等
+- /data/smb_share: chown 设置 root:root, chmod 设置 rwxr-xr-x, 让用户可访问, 子文件夹不允许用户删除、更名等
 - /data/smb_share/foler1: chown 设置 sambashare:sambashare, 所有 smb 用户均可访问、编辑、删除文件; 同时设置 chmod 2770 让新创建的文件(夹)有同样的 group(smabashare)
 - /data/smb_share/folerx: chown 设置 smb_groupx:smb_groupx, 只有当 smb 用户属于 smb_groupx 组时, 才有该文件夹的 wrx 权限
 
@@ -138,3 +144,8 @@ ps: /etc/samba
 
 > 7. 从组中移除用户: gpasswd 命令（安全移除单个组）, gpasswd 是专门管理组的工具，-d 选项可直接将用户从指定组中移除，且不会影响用户所属的其他组（安全可靠）。
 >    sudo gpasswd -d 用户名 要移除的组名
+
+> 8. 对已添加了 acl 扩展权限的文件(夹) 清除 acl 权限
+>    - sudo setfacl -R -b /data/samba_share
+>    - sudo chmod g+w /data/samba_share, 清除可能会影响 group 的 write 权限, 这里补上 w
+>    - sudo find /data/samba_share -type d ! -perm -g=x, 查找 group 没有 x 权限的文件夹, 若有, 则给其加上 g+x, 避免全部递归也给文件添加了 x 权限

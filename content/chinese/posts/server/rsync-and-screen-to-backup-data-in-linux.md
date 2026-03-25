@@ -53,6 +53,15 @@ sudo apt install p7zip-full
 7z x -o/data/tmp/output backups.7z.001
 ```
 
+#### 7. crontab 每日执行 rsync (上次未完成, 不允许重复执行, 直接跳过)
+```
+# 加锁
+# 每天凌晨 2 点 执行 rsync 同步，绝不重复运行
+# 0 2 * * * flock -n /tmp/rsync_backup.lock rsync -avP /源路径 /目标路径
+0 2 * * * flock -n /tmp/rsync_backup.lock rsync -avP /data/share/ /data/backups/share/ >> /home/lenovo/rsync_backups.log 2>&1
+
+```
+
 
 
 [rscyc用法参考: 阮一峰-rsync 用法教程](https://www.ruanyifeng.com/blog/2020/08/rsync.html)

@@ -5,15 +5,13 @@ tags = ['rsync', 'screen', '7z']
 draft = false
 +++
 
-```
-
 ## Steps
-1. 进行终端后, 新开一个 screen 窗口(例如名为 backup, 后续用于重新回到窗口)
+#### 1. 进行终端后, 新开一个 screen 窗口(例如名为 backup, 后续用于重新回到窗口)
 ```bash
 screen -S backup
 ```
 
-2. 在 screen 窗口中执行 rsync 命令
+#### 2. 在 screen 窗口中执行 rsync 命令
 ```bash
 # /data/share/ 中的文件 到 /data/backups/share/  中的文件, 后面的文件夹不再生成 share 路径, 只 sync 文件
 # rync -anv 代表 模拟运行, 查看影响
@@ -22,7 +20,7 @@ screen -S backup
 rsync -avP /data/share/ /data/backups/share/   
 ```
 
-3. 退出 screen 窗口
+#### 3. 退出 screen 窗口
 ```bash
 # 不需要这个 screen 窗口了, `exit` 关闭退出
 # 先按 Ctrl + A, 放开, 快速按 D
@@ -30,13 +28,13 @@ rsync -avP /data/share/ /data/backups/share/
 Ctrl + A -> D  
 ```
 
-4. 回到 screen 窗口 (名为 backup)
+#### 4. 回到 screen 窗口 (名为 backup)
 ```bash
 # 查看所有后台 screen 窗口: screen -ls
 screen -r backup
 ```
 
-5. 使用 7zip 进行分片压缩
+#### 5. 使用 7zip 进行分片压缩
 ```
 # 如果未安装则先安装 7zip(7zip包只支持 7z格式, full包还支持 zip等)
 sudo apt install p7zip-full
@@ -49,7 +47,7 @@ sudo apt install p7zip-full
 ```
 
 
-6. 7zip 解压
+#### 6. 7zip 解压
 ```
 # 小写o, 不要有空格, 到指定文件夹, 不添加 -o 则在当前文件夹
 7z x -o/data/tmp/output backups.7z.001

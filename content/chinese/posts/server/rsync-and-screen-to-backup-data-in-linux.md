@@ -23,7 +23,9 @@ rsync -av /data/share/ /data/backups/share/
 3. 退出 screen 窗口
 ```bash
 # 不需要这个 screen 窗口了, `exit` 关闭退出
-Ctrl + A + D
+# 先按 Ctrl + A, 放开, 快速按 D
+# 或者 先按 Ctrl + A, 放开 A, 再快速按 D
+Ctrl + A -> D  
 ```
 
 4. 回到 screen 窗口 (名为 backup)

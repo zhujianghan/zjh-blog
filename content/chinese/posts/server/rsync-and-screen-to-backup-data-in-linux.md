@@ -34,7 +34,7 @@ Ctrl + A -> D
 screen -r backup
 ```
 
-#### 5. 使用 7zip 进行分片压缩
+#### 5. 使用 7zip 进行(加密)分片压缩
 ```
 # 如果未安装则先安装 7zip(7zip包只支持 7z格式, full包还支持 zip等)
 sudo apt install p7zip-full
@@ -43,6 +43,12 @@ sudo apt install p7zip-full
 # backups.7z.001, backups.7z.002,...
 7z a -v10g  /data/tmp/backups.7z /data/backups/
 
+
+# -p 加密码 (aes256), -mhe=on 同时加密文件名.  交互输入密码
+7z a -p -mhe=on -v10g  /data/tmp/backups.7z /data/backups/
+
+# 密码写入命令行
+7z a -p"password" -mhe=on -v10g  /data/tmp/backups.7z /data/backups/
 
 ```
 

@@ -17,7 +17,9 @@ screen -S backup
 ```bash
 # /data/share/ 中的文件 到 /data/backups/share/  中的文件, 后面的文件夹不再生成 share 路径, 只 sync 文件
 # rync -anv 代表 模拟运行, 查看影响
-rsync -av /data/share/ /data/backups/share/   
+# -P 表示 --progress + --partial, 显示进度 + 保留中断的临时文件(下次可续传)
+# ps: 如果没有 --partial 且中断了, 只不过没有临时文件, 下次整个文件重新传输
+rsync -avP /data/share/ /data/backups/share/   
 ```
 
 3. 退出 screen 窗口

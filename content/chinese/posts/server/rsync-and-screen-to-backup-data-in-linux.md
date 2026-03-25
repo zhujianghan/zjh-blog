@@ -1,7 +1,7 @@
 +++
 title = 'rsync & screen to backup data in linux'
 date = 2026-03-25T10:21:00+08:00
-tags = ['rsync', 'screen']
+tags = ['rsync', 'screen', '7z']
 draft = false
 +++
 
@@ -32,6 +32,25 @@ Ctrl + A -> D
 ```bash
 # 查看所有后台 screen 窗口: screen -ls
 screen -r backup
+```
+
+5. 使用 7zip 进行分片压缩
+```
+# 如果未安装则先安装 7zip(7zip包只支持 7z格式, full包还支持 zip等)
+sudo apt install p7zip-full
+
+# 分片10G, 指定目标的全路径(否则 backups.zip 到当前目录), source 目录
+# backups.7z.001, backups.7z.002,...
+7z a -v10g  /data/tmp/backups.7z /data/backups/
+
+
+```
+
+
+6. 7zip 解压
+```
+# 小写o, 不要有空格, 到指定文件夹, 不添加 -o 则在当前文件夹
+7z x -o/data/tmp/output backups.7z.001
 ```
 
 

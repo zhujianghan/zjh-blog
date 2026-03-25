@@ -40,12 +40,19 @@
 </span></span><span style=display:flex><span>Ctrl + A -&gt; D  
 </span></span></code></pre></div><h4 id=4-回到-screen-窗口-名为-backup>4. 回到 screen 窗口 (名为 backup)</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 查看所有后台 screen 窗口: screen -ls</span>
 </span></span><span style=display:flex><span>screen -r backup
-</span></span></code></pre></div><h4 id=5-使用-7zip-进行分片压缩>5. 使用 7zip 进行分片压缩</h4><pre tabindex=0><code># 如果未安装则先安装 7zip(7zip包只支持 7z格式, full包还支持 zip等)
+</span></span></code></pre></div><h4 id=5-使用-7zip-进行加密分片压缩>5. 使用 7zip 进行(加密)分片压缩</h4><pre tabindex=0><code># 如果未安装则先安装 7zip(7zip包只支持 7z格式, full包还支持 zip等)
 sudo apt install p7zip-full
 
 # 分片10G, 指定目标的全路径(否则 backups.zip 到当前目录), source 目录
 # backups.7z.001, backups.7z.002,...
 7z a -v10g  /data/tmp/backups.7z /data/backups/
+
+
+# -p 加密码 (aes256), -mhe=on 同时加密文件名.  交互输入密码
+7z a -p -mhe=on -v10g  /data/tmp/backups.7z /data/backups/
+
+# 密码写入命令行
+7z a -p&#34;password&#34; -mhe=on -v10g  /data/tmp/backups.7z /data/backups/
 </code></pre><h4 id=6-7zip-解压>6. 7zip 解压</h4><pre tabindex=0><code># 小写o, 不要有空格, 到指定文件夹, 不添加 -o 则在当前文件夹
 7z x -o/data/tmp/output backups.7z.001
 </code></pre><h4 id=7-crontab-每日执行-rsync-上次未完成-不允许重复执行-直接跳过>7. crontab 每日执行 rsync (上次未完成, 不允许重复执行, 直接跳过)</h4><pre tabindex=0><code># 加锁

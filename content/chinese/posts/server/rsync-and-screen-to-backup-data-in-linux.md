@@ -17,7 +17,10 @@ screen -S backup
 # rync -anv 代表 模拟运行, 查看影响
 # -P 表示 --progress + --partial, 显示进度 + 保留中断的临时文件(下次可续传)
 # ps: 如果没有 --partial 且中断了, 只不过没有临时文件, 下次整个文件重新传输
-rsync -avP /data/share/ /data/backups/share/   
+# rsync -avP /data/share/ /data/backups/share/
+
+# --info=progress2 表示总体进度, --partical 是单个文件的进度
+rsync -avP --info=progress2 /data/share/ /data/backups/share/
 ```
 
 #### 3. 退出 screen 窗口

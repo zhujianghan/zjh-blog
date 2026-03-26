@@ -33,7 +33,10 @@
 </span></span><span style=display:flex><span><span style=color:#75715e># rync -anv 代表 模拟运行, 查看影响</span>
 </span></span><span style=display:flex><span><span style=color:#75715e># -P 表示 --progress + --partial, 显示进度 + 保留中断的临时文件(下次可续传)</span>
 </span></span><span style=display:flex><span><span style=color:#75715e># ps: 如果没有 --partial 且中断了, 只不过没有临时文件, 下次整个文件重新传输</span>
-</span></span><span style=display:flex><span>rsync -avP /data/share/ /data/backups/share/   
+</span></span><span style=display:flex><span><span style=color:#75715e># rsync -avP /data/share/ /data/backups/share/</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># --info=progress2 表示总体进度, --partical 是单个文件的进度</span>
+</span></span><span style=display:flex><span>rsync -avP --info<span style=color:#f92672>=</span>progress2 /data/share/ /data/backups/share/
 </span></span></code></pre></div><h4 id=3-退出-screen-窗口>3. 退出 screen 窗口</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 不需要这个 screen 窗口了, `exit` 关闭退出</span>
 </span></span><span style=display:flex><span><span style=color:#75715e># 先按 Ctrl + A, 放开, 快速按 D</span>
 </span></span><span style=display:flex><span><span style=color:#75715e># 或者 先按 Ctrl + A, 放开 A, 再快速按 D</span>
